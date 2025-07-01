@@ -19,15 +19,15 @@
 
 ### Part 2: Technical Order of Operations
 - [Technical Order of Operations](#part-2-technical-order-of-operations)
-- [Design System](#-design-system)
-- [API Spec](#-api-spec)
-- [Integration Plan](#-integration-plan)
-- [Offline Strategy](#-offline-strategy)
-- [Push Notification Plan](#-push-notification-plan)
-- [Release Plan](#-release-plan)
-- [QA Checklist](#-qa-checklist)
-- [Analytics & Event Plan](#-analytics--event-plan)
-- [Feature Flag System](#-feature-flag-system)
+- [Design System](#design-system)
+- [API Spec](#api-spec)
+- [Integration Plan](#integration-plan)
+- [Offline Strategy](#offline-strategy)
+- [Push Notification Plan](#push-notification-plan)
+- [Release Plan](#release-plan)
+- [QA Checklist](#qa-checklist)
+- [Analytics & Event Plan](#analytics--event-plan)
+- [Feature Flag System](#feature-flag-system)
 
 ### Part 3: Development Plan
 - [Background and Motivation](#background-and-motivation)

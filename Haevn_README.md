@@ -1,5 +1,7 @@
 # Haevn App Project Documentation
 
+*Last updated: July 2025*
+
 ## Table of Contents
 
 ### Part 1: Feature List

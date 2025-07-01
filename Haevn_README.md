@@ -1,8 +1,10 @@
 # Haevn App Project Documentation
+
 ## Table of Contents
 
 ### Part 1: Feature List
-- [Absolute Master List of Haevn App Features](#part-1-absolute-master-list-of-haevn-app-features)
+
+- [Absolute Master List of Haevn App Features](#part-1-feature-list)
 - [Booking Features](#1-booking-features)
 - [Membership & Referral](#2-membership--referral)
 - [FlowState Replay](#3-flowstate-replay)
@@ -13,11 +15,12 @@
 - [Account & Profile](#8-account--profile)
 - [Payments & Wallet](#9-payments--wallet)
 - [Offline UX](#10-offline-ux)
-- [Analytics](#11-analytics)
-- [Admin & Staff](#12-admin--staff)
+- [Analytics](#11-analytics--optimization)
+- [Admin & Staff](#12-admin--integration-infrastructure)
 
 ### Part 2: Technical Order of Operations
-- [Technical Order of Operations](#part-2-technical-order-of-operations)
+
+- [Technical Order of Operations](#part-2-technical-order-of-operations-for-haevn-ios-app-development)
 - [Design System](#design-system)
 - [API Spec](#api-spec)
 - [Integration Plan](#integration-plan)
@@ -29,6 +32,7 @@
 - [Feature Flag System](#feature-flag-system)
 
 ### Part 3: Development Plan
+
 - [Background and Motivation](#background-and-motivation)
 - [Key Challenges and Analysis](#key-challenges-and-analysis)
 - [High-level Task Breakdown](#high-level-task-breakdown)
@@ -40,9 +44,10 @@
 - [Milestone Reviews](#milestone-reviews)
 ---
 ## Part 1: Absolute Master List of Haevn App Features
-
 This is a granular, un-grouped breakdown of every feature across all modules of the Haevn app.
+
 ### 1. Booking Features
+
 - Surf session booking
 - Wellness session booking
 - Event booking (solo or group)
@@ -58,7 +63,9 @@ This is a granular, un-grouped breakdown of every feature across all modules of 
 - Time zone auto-adjustment by park
 - Dynamic capacity lockout
 - Multiple park calendar views
+
 ### 2. Membership & Referrals
+
 - Membership tier assignment
 - Tier-specific benefit display
 - Referral link generation
@@ -69,7 +76,9 @@ This is a granular, un-grouped breakdown of every feature across all modules of 
 - Points redemption interface
 - CRM data sync (HubSpot, Salesforce)
 - Upcoming perk unlock view
+
 ### 3. FlowState Replay
+
 - Auto-import of surf videos
 - Embedded session video player
 - Video timeline view
@@ -80,7 +89,9 @@ This is a granular, un-grouped breakdown of every feature across all modules of 
 - Archive/history of all sessions
 - Replay access from profile
 - Multi-angle replay support (if provided by FlowState)
+
 ### 4. Community / Crews
+
 - Create new crew
 - Join existing crew via code
 - Crew invite via SMS or link
@@ -91,7 +102,9 @@ This is a granular, un-grouped breakdown of every feature across all modules of 
 - Push notifications for crew invites
 - Shared crew video access
 - Future scope: private crew chat
+
 ### 5. Retail, Drops & F\&B
+
 - In-app retail Browse
 - Product detail pages
 - In-app retail checkout
@@ -105,7 +118,9 @@ This is a granular, un-grouped breakdown of every feature across all modules of 
 - POS integration for fulfillment
 - Retail/F\&B order history
 - Dynamic inventory sync
+
 ### 6. Push Notification System
+
 - Surf condition alerts
 - Weather pings per park
 - Video replay alerts
@@ -117,7 +132,9 @@ This is a granular, un-grouped breakdown of every feature across all modules of 
 - Localized/regional push content
 - Behavior-based push triggers
 - Segment-based push targeting
+
 ### 7. Account & Identity
+
 - Apple SSO
 - Google SSO
 - Email/password login
@@ -131,7 +148,9 @@ This is a granular, un-grouped breakdown of every feature across all modules of 
 - Loyalty point history
 - Session share settings
   - Region-based content filters
+
 ### 8. Payments & Wallet
+
   - Stripe integration
   - Embedded payment UI
   - Credit card tokenization
@@ -142,13 +161,16 @@ This is a granular, un-grouped breakdown of every feature across all modules of 
   - Payment failure fallback flow
   - POS sync with in-app orders
   - Refund flow (initiated by admin)
+
 ### 9. Offline Functionality
-  - QR code available offline
-  - Previously watched video playback offline
-  - Session history cache
-  - Booked session cache
-  - App usability in airplane mode
-  - Local push scheduling (if no connection)
+
+- QR code available offline
+- Previously watched video playback offline
+- Session history cache
+- Booked session cache
+- App usability in airplane mode
+- Local push scheduling (if no connection)
+
 ### 10. Analytics & Optimization
 
 - Event tracking (Mixpanel)
@@ -160,6 +182,7 @@ This is a granular, un-grouped breakdown of every feature across all modules of 
 - A/B test targeting
 - UX test event hooks
 - Real-time guest behavior logging
+
 ### 11. Admin & Integration Infrastructure
 
 - Headless CMS for content control
@@ -175,24 +198,26 @@ This is a granular, un-grouped breakdown of every feature across all modules of 
 - Feature flag system per module
 - Remote config toggles for beta features
 ---
-### Part 2: Technical Order of Operations for Haevn iOS App Development
+
+### Part 2: Technical Order of Operations
+ for Haevn iOS App Development
 This outlines a structured, phased approach for building the Haevn iOS app, prioritizing velocity and minimizing refactoring. It assumes a seasoned team and early architectural buy-in.
 #### Phase 0: Foundations (Week 0–2)
 - **Product & Engineering Setup:** Define system architecture, finalize data model, define API contracts, set up version control/CI/CD, choose tech stack (SwiftUI + Combine, Node.js/Go backend, Firebase/OneSignal, Stripe).
 - **Integrations:** Confirm vendors (WakeSys/Vivaticket, FlowState API, Stripe, OneSignal/Firebase, Mixpanel, CMS), set up sandboxes and test credentials.
 #### Phase 1: Core Infrastructure (Week 2–6)
-1.  **Authentication & User Management:** Apple, Google, Email login; region + park preference logic; guest profile system; session, booking, and loyalty history linked to user ID.
-2.  **Booking Engine (Back + Front):** Surf + wellness booking UI; crew booking flow; session modification, QR issuance, lockouts; timezone + calendar logic; dynamic capacity logic; session caching for offline.
-3.  **Membership + Referral System:** Tier structure, referral code generation; points logic (accrual + redemption); display wallet, perks, referral tracking.
+1. **Authentication & User Management:** Apple, Google, Email login; region + park preference logic; guest profile system; session, booking, and loyalty history linked to user ID.
+2. **Booking Engine (Back + Front):** Surf + wellness booking UI; crew booking flow; session modification, QR issuance, lockouts; timezone + calendar logic; dynamic capacity logic; session caching for offline.
+3. **Membership + Referral System:** Tier structure, referral code generation; points logic (accrual + redemption); display wallet, perks, referral tracking.
 #### Phase 2: Engagement Systems (Week 6–12)
-4\.  **FlowState Replay:** Video import via FlowState API; player with stats overlays, multi-angle support; shareable replay links, session archive; offline playback system.
-5\.  **Crew & Community:** Crew creation/joining logic; shared booking flows; crew calendar + video history; push invites to join crew.
-6\.  **Push Notification Infrastructure:** Setup routing layer (OneSignal or Firebase); behavior triggers (e.g., missed booking, referral unlocked); regional & park-based segmentation.
+4\. **FlowState Replay:** Video import via FlowState API; player with stats overlays, multi-angle support; shareable replay links, session archive; offline playback system.
+5\. **Crew & Community:** Crew creation/joining logic; shared booking flows; crew calendar + video history; push invites to join crew.
+6\. **Push Notification Infrastructure:** Setup routing layer (OneSignal or Firebase); behavior triggers (e.g., missed booking, referral unlocked); regional & park-based segmentation.
 #### Phase 3: Monetization Systems (Week 10–16)
-7\.  **Retail & F\&B:** In-app catalog + drop module; drop countdown system; checkout (Stripe + credit logic); POS integration + pickup instructions; menu per park, order history.
-8\.  **Payments & Wallet:** Credit card tokenization; credit app logic; refund support; POS backend bridge.
+7\. **Retail & F\&B:** In-app catalog + drop module; drop countdown system; checkout (Stripe + credit logic); POS integration + pickup instructions; menu per park, order history.
+8\. **Payments & Wallet:** Credit card tokenization; credit app logic; refund support; POS backend bridge.
 #### Phase 4: Offline & Edge (Week 14–18)
-9\.  **Offline-First UX:** Offline QR pass system; local cache of session, replay, profile; local push reminder logic.
+9\. **Offline-First UX:** Offline QR pass system; local cache of session, replay, profile; local push reminder logic.
 #### Phase 5: Admin & Analytics (Week 18–22)
 10\. **CMS & Staff Systems:** Headless CMS for content, promos, drops; booking backend bridge (WakeSys/Vivaticket); FlowState sync system; loyalty CRM integration; LMS hook (if in scope).
 11\. **Analytics:** Mixpanel event hooks; funnel tracking for booking, drop, replay; referral + push metrics; real-time user journey logging; A/B test layer.
@@ -201,13 +226,9 @@ This outlines a structured, phased approach for building the Haevn iOS app, prio
 13\. **Polish & QA:** Full regression testing; UX polish round; video loading speed, cache tuning; real-time bug analytics.
 14\. **Beta Test + Launch Readiness:** Internal beta (TestFlight); soft launch in one park; analytics dashboard live; ready for App Store submission.
 #### Optional Enhancements (Post-Launch)
-- Private crew chat
-- Personalized surf tips from AI overlay
-- Leaderboards for most active crews
----
-### Part 3: Design Architecture Plan & Screen Mockup Specification
-This section details the design architecture plan, breaking down all app screens into modules, outlining the mocking format, and specifying each screen's UI elements and behavior. The estimated total screens are \~104, with 120+ including edge/error/loading states.
+
 #### STEP 1: Define Screen Groups (Top-Level UX Map)
+
 | Module                   | Approx. Screens | Notes                                   |
 | :--------------- | :---------- | :------------------------ |
 | 01. Onboarding & Auth    | 10              | Welcome, SSO, reset, preferences        |
@@ -224,6 +245,7 @@ This section details the design architecture plan, breaking down all app screens
 | 12. Notifications        | 6               | Inbox, settings, states                 |
 | 13. Offline States       | 4               | Offline QR, replay, alerts              |
 | **Total (Initial Estimate)** | **\~104** | **Final count with edge/error/loading: 120+** |
+
 #### STEP 2: Format
 Each screen will be mocked in Figma (preferred) or Framer (if motion prototypes are requested). Each mock will include:
 - Desktop-annotated flow chart per module
@@ -239,130 +261,149 @@ Mockups delivered in phased sprints, ready for handoff.
 | 3     | Replay, Referrals, Crews                           | Visuals + Dev Notes       |
 | 4     | Drops, F\&B, Wallet, Offline                        | Full UI Systems           |
 ---
+
 ### Part 4: Detailed Screen Mockup Specifications (Module by Module)
+
 This section provides a granular breakdown of each screen, including its purpose, UI elements, layout, and specific behaviors.
+
 #### Module 1: Onboarding & Auth (10 screens)
-1.  **Welcome Screen:** Haevn logo, "Continue with Apple/Google/Email" CTAs, "Already have an account? Log in" link, soft wave background.
-2.  **Email Sign Up:** "Create your account" header, Name, Email, Password inputs with validation, "Sign Up" CTA, Terms/Privacy checkbox, Back button.
-3.  **Email Login:** "Welcome Back" header, Email, Password inputs, "Log In" CTA, "Forgot Password?" link, error states, Back button.
-4.  **Forgot Password:** "Reset Your Password" header, Email input, "Send Reset Link" CTA, success state, "Back to Login" link.
-5.  **Password Reset Flow:** New password, Confirm password inputs with validation, "Reset Password" CTA, success message.
-6.  **Park Preference Selection:** "Choose Your Home Park" header, Carousel/List of park cards (logo, name, location, image, select state), "Continue" CTA.
-7.  **Notification Opt-In:** "Stay in the Loop" header, description, "Enable Notifications" / "Skip for Now" buttons.
-8.  **First-Time Tutorial:** Swipeable cards ("Book surf sessions," "Replay and improve," "Earn rewards"), "Get Started" / "Skip" buttons.
-9.  **Region Lock Message:** Message "Haevn isn’t live in your region yet," actions ("Set a preferred park," "Notify me"), visual.
+1. **Welcome Screen:** Haevn logo, "Continue with Apple/Google/Email" CTAs, "Already have an account? Log in" link, soft wave background.
+2. **Email Sign Up:** "Create your account" header, Name, Email, Password inputs with validation, "Sign Up" CTA, Terms/Privacy checkbox, Back button.
+3. **Email Login:** "Welcome Back" header, Email, Password inputs, "Log In" CTA, "Forgot Password?" link, error states, Back button.
+4. **Forgot Password:** "Reset Your Password" header, Email input, "Send Reset Link" CTA, success state, "Back to Login" link.
+5. **Password Reset Flow:** New password, Confirm password inputs with validation, "Reset Password" CTA, success message.
+6. **Park Preference Selection:** "Choose Your Home Park" header, Carousel/List of park cards (logo, name, location, image, select state), "Continue" CTA.
+7. **Notification Opt-In:** "Stay in the Loop" header, description, "Enable Notifications" / "Skip for Now" buttons.
+8. **First-Time Tutorial:** Swipeable cards ("Book surf sessions," "Replay and improve," "Earn rewards"), "Get Started" / "Skip" buttons.
+9. **Region Lock Message:** Message "Haevn isn’t live in your region yet," actions ("Set a preferred park," "Notify me"), visual.
 10. **Legal Agreements:** Scrollable text, "I Agree" CTA.
+
 #### Module 2: Home Hub (4 screens)
-1.  **Home Dashboard:** Header (Haevn logo, park selector, notification bell), Hero Banner (rotating surf image, dynamic text, "Book Now" CTA), Action Tiles (Replay Session, Join Your Crew, Earn Rewards, Retail Drop), Activity Carousel (last session, reward, referral, replay), Footer Nav.
-2.  **Park Switcher Modal:** "Switch Park" header, List of Available Parks (card with name, location, photo, selected check), "Confirm" CTA.
-3.  **Notification Drawer:** "Notifications" header, Grouped List by Type (Booking, Drop, Replay, Loyalty), Icons, Mark all as read, Empty State.
-4.  **Home Loading / Skeleton State:** Wave animation loader, gray box placeholders for UI elements, Timeout Fallback message.
-**Module 3: Booking Flow (14 screens)**
-1.  **Booking Type Selector:** "What do you want to book?" header, Segmented Control Tabs (Surf / Wellness / Event), "Continue" CTA.
-2.  **Session Calendar:** Top Nav, Date Selector (horizontal scroll), Time Slots Grid (color-coded availability, session metadata), Filter Drawer Button, "Next" CTA.
-3.  **Session Detail View:** Session Title, Time, Date, Park, Availability Count, Crew Toggle, Price + Points Info, "Confirm Session" CTA.
-4.  **Booking Confirmation:** Checkmark icon, "You’re booked\!" text, Session summary, QR Code, "View in My Sessions" / "Share with Crew" CTAs.
-5.  **Booking Modification (Edit/Cancel):** "Modify Booking" header, Booking Card, "Edit Date/Time" / "Cancel Booking" buttons, Cancel Confirmation Modal.
-6.  **QR Code View:** Fullscreen QR Code, Session name, time, park, "Show to staff on arrival," "Add to Wallet" button, Offline status bar.
-7.  **Offline QR Backup:** Low-bandwidth fallback UI, cached QR image + text confirmation.
-8.  **Booking Reminders via Push:** Notification UX with deep link to QR code.
-9.  **Rebooking Prompt:** Card "Book your next ride?", pre-filled time options, "Rebook" CTA.
+1. **Home Dashboard:** Header (Haevn logo, park selector, notification bell), Hero Banner (rotating surf image, dynamic text, "Book Now" CTA), Action Tiles (Replay Session, Join Your Crew, Earn Rewards, Retail Drop), Activity Carousel (last session, reward, referral, replay), Footer Nav.
+2. **Park Switcher Modal:** "Switch Park" header, List of Available Parks (card with name, location, photo, selected check), "Confirm" CTA.
+3. **Notification Drawer:** "Notifications" header, Grouped List by Type (Booking, Drop, Replay, Loyalty), Icons, Mark all as read, Empty State.
+4. **Home Loading / Skeleton State:** Wave animation loader, gray box placeholders for UI elements, Timeout Fallback message.
+### Module 3: Booking Flow (14 screens)
+1. **Booking Type Selector:** "What do you want to book?" header, Segmented Control Tabs (Surf / Wellness / Event), "Continue" CTA.
+2. **Session Calendar:** Top Nav, Date Selector (horizontal scroll), Time Slots Grid (color-coded availability, session metadata), Filter Drawer Button, "Next" CTA.
+3. **Session Detail View:** Session Title, Time, Date, Park, Availability Count, Crew Toggle, Price + Points Info, "Confirm Session" CTA.
+4. **Booking Confirmation:** Checkmark icon, "You’re booked\!" text, Session summary, QR Code, "View in My Sessions" / "Share with Crew" CTAs.
+5. **Booking Modification (Edit/Cancel):** "Modify Booking" header, Booking Card, "Edit Date/Time" / "Cancel Booking" buttons, Cancel Confirmation Modal.
+6. **QR Code View:** Fullscreen QR Code, Session name, time, park, "Show to staff on arrival," "Add to Wallet" button, Offline status bar.
+7. **Offline QR Backup:** Low-bandwidth fallback UI, cached QR image + text confirmation.
+8. **Booking Reminders via Push:** Notification UX with deep link to QR code.
+9. **Rebooking Prompt:** Card "Book your next ride?", pre-filled time options, "Rebook" CTA.
+8. **Booking Reminders via Push:** Notification UX with deep link to QR code.
+9. **Rebooking Prompt:** Card "Book your next ride?", pre-filled time options, "Rebook" CTA.
 10. **Time Zone Auto-Adjust Alert:** Conditional banner "You’re viewing session times in Park’s local time zone (PST)."
 11. **Dynamic Capacity Lockout:** Modal "This session is fully booked," suggested next time slots, "Try Another Time" CTA.
 12. **Multi-Park Calendar View:** Optional Mode Toggle, Dropdown to switch parks, overlay icons, map view.
 13. **Booking History:** Tabs (Upcoming / Past), Session Cards, "Rebook" CTA, Empty State.
 14. **Booking Flow – Error/Fallback:** States for unavailable sessions, network timeout, payment issues, generic errors.
-**Module 4: FlowState Replay (10 screens)**
-1.  **Replay Landing:** "FlowState Replay" header, Carousel/Grid of Session cards (thumbnail, date, time, location, wave count, "View Replay" CTA).
-2.  **Video Player View:** Top (session name, location, date), Main Area (embedded video player, controls, speed), Bottom Overlay Panel (wave count, ride duration, score).
-3.  **Timeline Scrubber:** Timeline bar with wave peaks highlighted, hover tooltips, tap interaction.
-4.  **Overlay Toggle Panel:** Expandable drawer with Toggle Chips (Show Wave Count, Session Stats, Time Codes).
-5.  **Session Detail View:** Scrollable area below player with Session Summary (Park, Time, Date, Surf Type), Stats Summary, Notes section.
-6.  **Share Replay Modal:** "Share This Session" header, Share Options (Copy link, Messages, Email, Instagram), "Make this replay public" toggle.
-7.  **Replay Archive Filter:** Filters (Park, Date range, Wave count), Sort Options (Newest, Most waves, Longest rides).
-8.  **Replay Empty State:** Message "No replays yet. Book a session to start tracking," "Book Now" CTA, illustration.
-9.  **Offline Playback Mode:** Banner "Playing Offline – FlowState," Limitations Message, Offline icon.
+#### Module 4: FlowState Replay (10 screens)
+1. **Replay Landing:** "FlowState Replay" header, Carousel/Grid of Session cards (thumbnail, date, time, location, wave count, "View Replay" CTA).
+2. **Video Player View:** Top (session name, location, date), Main Area (embedded video player, controls, speed), Bottom Overlay Panel (wave count, ride duration, score).
+3. **Timeline Scrubber:** Timeline bar with wave peaks highlighted, hover tooltips, tap interaction.
+4. **Overlay Toggle Panel:** Expandable drawer with Toggle Chips (Show Wave Count, Session Stats, Time Codes).
+5. **Session Detail View:** Scrollable area below player with Session Summary (Park, Time, Date, Surf Type), Stats Summary, Notes section.
+6. **Share Replay Modal:** "Share This Session" header, Share Options (Copy link, Messages, Email, Instagram), "Make this replay public" toggle.
+7. **Replay Archive Filter:** Filters (Park, Date range, Wave count), Sort Options (Newest, Most waves, Longest rides).
+8. **Replay Empty State:** Message "No replays yet. Book a session to start tracking," "Book Now" CTA, illustration.
+9. **Offline Playback Mode:** Banner "Playing Offline – FlowState," Limitations Message, Offline icon.
 10. **Replay Entry from Profile:** Mini card (thumbnail, date, wave count, "Watch Replay" / "Share Replay" CTAs).
-**Module 5: Membership (6 screens)**
-1.  **Membership Overview:** "Your Membership" header, Tier Badge Display, Benefit Highlights, "View Perks" CTA.
-2.  **Perks Breakdown:** Tier Tabs (Bronze / Silver / Gold / Platinum), Benefits Grid, "Compare All Tiers" Toggle.
-3.  **Points Timeline:** "Your Points" header, Total Balance, Points Activity List (date, action, points +/-), Filter Options.
-4.  **Upcoming Perk Unlock:** Progress Ring UI, Next Perk Details (description, unlock date/requirement), "See More Ways to Earn" CTA.
-5.  **Status Expiration Warning:** Banner "Your Gold status expires in 5 days," "Book Now to Maintain Tier" CTA, Timer Clock Graphic.
-6.  **Empty State – Not Yet a Member:** "Join Haevn Rewards" header, description, illustration, "Activate Membership" CTA.
-**Module 6: Referrals (6 screens)**
-1.  **Referral Landing:** "Refer & Earn" header, graphic, Your Code, "Invite Friends" CTA, Tracker Preview.
-2.  **Invite Modal:** "Send an Invite" header, Options (Copy link, Share via), Preview Text, Permission Toggle.
-3.  **Referral Performance Dashboard:** Total Referred, Successful Conversions, Points Earned, Leaderboard Card (optional), "View Referral History" CTA.
-4.  **Referral History:** List of Invites (Name/Email, date sent, status, points earned), Empty State.
-5.  **Reward Confirmation Modal:** Confetti animation, "Congrats\! You earned X points," breakdown, "Refer Another Friend" CTA.
-6.  **Referral Conversion Failure State:** Banner "Referral Not Tracked," explanation, Support Link, Tip.
-**Module 7: Crews (8 screens)**
-1.  **Crew Hub Landing:** "Your Crew" header, Crew Name + Icon, Member Avatars Row, Next Booking Card, "View Calendar" / "Share Replay" CTAs.
-2.  **Create New Crew Flow:** Step 1 (Name Your Crew), Step 2 (Choose Crew Icon), Step 3 (Add Friends), "Create Crew" CTA.
-3.  **Join Crew via Code:** "Join a Crew" header, "Enter Crew Code" input, "Join" CTA, success/failure modals.
-4.  **Invite Modal (SMS / Link):** "Invite to Crew" header, custom join link, Options (Copy, Send via), Status Tracker.
-5.  **Crew Booking Calendar:** Top Nav, Day View (icons per member, color coding), tap to show attendance.
-6.  **Crew Booking History:** Session Cards, "Replay Session" CTA, Filter, Sort.
-7.  **Crew Profile & Members:** Crew Name & Icon, Member List (name, join date, role, remove option), Crew Code, "Leave Crew" CTA.
-8.  **Push Notification Invite:** Text "Donny invited you to join 'Wave Riders'," "Join Crew" CTA, fail state.
-**Module 8: Drops & Retail (10 screens)**
-1.  **Retail Home:** "Shop Haevn" header, Categories Carousel, Featured Product Banner, List/Grid View of products, "View All Drops" CTA.
-2.  **Product Detail Page:** Product Image Carousel, Title, Price, Size Selector, Inventory Notice, Quantity Stepper, "Add to Cart" CTA, Description Toggle, Drop Info.
-3.  **Drop Schedule:** "Drops" header, Drop Cards (image, name, release date, status, CTA).
-4.  **Drop Countdown Page:** Header, Countdown Timer, Description, disabled "Add to Cart" CTA, "Remind Me" option.
-5.  **Drop Live Participation:** Product Image, enabled "Add to Cart," Status bar "Now live," Quick Checkout CTA, FOMO Indicator.
-6.  **Cart View:** Item list (image, name, price, qty, remove), Subtotal, Apply Credit toggle, "Checkout" / "Continue Shopping" CTAs, drop product hold note.
-7.  **Checkout Page:** Shipping Info, Payment Method options, Apply Points toggle, Order Summary, "Place Order" CTA, Terms Link.
-8.  **Order Confirmation:** "Order Placed" header, Summary Card, "Track Order" / "Shop More" CTAs, Confetti Animation.
-9.  **Order History:** List of Orders, Order Cards (product name, date, status, "View Details" CTA).
+#### Module 5: Membership (6 screens)
+1. **Membership Overview:** "Your Membership" header, Tier Badge Display, Benefit Highlights, "View Perks" CTA.
+2. **Perks Breakdown:** Tier Tabs (Bronze / Silver / Gold / Platinum), Benefits Grid, "Compare All Tiers" Toggle.
+3. **Points Timeline:** "Your Points" header, Total Balance, Points Activity List (date, action, points +/-), Filter Options.
+4. **Upcoming Perk Unlock:** Progress Ring UI, Next Perk Details (description, unlock date/requirement), "See More Ways to Earn" CTA.
+5. **Status Expiration Warning:** Banner "Your Gold status expires in 5 days," "Book Now to Maintain Tier" CTA, Timer Clock Graphic.
+6. **Empty State – Not Yet a Member:** "Join Haevn Rewards" header, description, illustration, "Activate Membership" CTA.
+#### Module 6: Referrals (6 screens)
+
+1. **Referral Landing:** "Refer & Earn" header, graphic, Your Code, "Invite Friends" CTA, Tracker Preview.
+2. **Invite Modal:** "Send an Invite" header, Options (Copy link, Share via), Preview Text, Permission Toggle.
+3. **Referral Performance Dashboard:** Total Referred, Successful Conversions, Points Earned, Leaderboard Card (optional), "View Referral History" CTA.
+4. **Referral History:** List of Invites (Name/Email, date sent, status, points earned), Empty State.
+5. **Reward Confirmation Modal:** Confetti animation, "Congrats\! You earned X points," breakdown, "Refer Another Friend" CTA.
+6. **Referral Conversion Failure State:** Banner "Referral Not Tracked," explanation, Support Link, Tip.
+#### Module 7: Crews (8 screens)
+
+1. **Crew Hub Landing:** "Your Crew" header, Crew Name + Icon, Member Avatars Row, Next Booking Card, "View Calendar" / "Share Replay" CTAs.
+2. **Create New Crew Flow:** Step 1 (Name Your Crew), Step 2 (Choose Crew Icon), Step 3 (Add Friends), "Create Crew" CTA.
+3. **Join Crew via Code:** "Join a Crew" header, "Enter Crew Code" input, "Join" CTA, success/failure modals.
+4. **Invite Modal (SMS / Link):** "Invite to Crew" header, custom join link, Options (Copy, Send via), Status Tracker.
+5. **Crew Booking Calendar:** Top Nav, Day View (icons per member, color coding), tap to show attendance.
+6. **Crew Booking History:** Session Cards, "Replay Session" CTA, Filter, Sort.
+7. **Crew Profile & Members:** Crew Name & Icon, Member List (name, join date, role, remove option), Crew Code, "Leave Crew" CTA.
+8. **Push Notification Invite:** Text "Donny invited you to join 'Wave Riders'," "Join Crew" CTA, fail state.
+#### Module 8: Drops & Retail (10 screens)
+
+1. **Retail Home:** "Shop Haevn" header, Categories Carousel, Featured Product Banner, List/Grid View of products, "View All Drops" CTA.
+2. **Product Detail Page:** Product Image Carousel, Title, Price, Size Selector, Inventory Notice, Quantity Stepper, "Add to Cart" CTA, Description Toggle, Drop Info.
+3. **Drop Schedule:** "Drops" header, Drop Cards (image, name, release date, status, CTA).
+4. **Drop Countdown Page:** Header, Countdown Timer, Description, disabled "Add to Cart" CTA, "Remind Me" option.
+5. **Drop Live Participation:** Product Image, enabled "Add to Cart," Status bar "Now live," Quick Checkout CTA, FOMO Indicator.
+6. **Cart View:** Item list (image, name, price, qty, remove), Subtotal, Apply Credit toggle, "Checkout" / "Continue Shopping" CTAs, drop product hold note.
+7. **Checkout Page:** Shipping Info, Payment Method options, Apply Points toggle, Order Summary, "Place Order" CTA, Terms Link.
+8. **Order Confirmation:** "Order Placed" header, Summary Card, "Track Order" / "Shop More" CTAs, Confetti Animation.
+9. **Order History:** List of Orders, Order Cards (product name, date, status, "View Details" CTA).
 10. **Dynamic Inventory Sync:** Out of Stock Overlay, Inventory Auto-refresh, Status Pill "Almost Gone," Error Modal.
-**Module 9: F\&B Ordering (8 screens)**
-1.  **F\&B Menu by Park:** "Order Food & Drinks" header, Park Selector, Category Tabs, Menu Item Cards (image, name, price, "+", "View Cart" CTA).
-2.  **Menu Item Detail:** Full Image View, Item Name, Description, Nutrition, Price, Quantity Selector, "Add to Cart" CTA, Close icon.
-3.  **Cart Summary:** "Your Cart" header, Items List (edit/delete), Subtotal, Note Field, "Checkout" / "Continue Shopping" CTAs.
-4.  **F\&B Checkout:** Pickup Location Selector, Pickup Time Selector, Payment Method options, "Place Order" CTA, Error Handling.
-5.  **Order Confirmation:** "Order Confirmed" header, Order Summary Card, "Track Order" CTA, Subtext.
-6.  **Order Status Tracking:** Progress Bar (Received, In Preparation, Ready), Estimated Time Remaining, Visual, "Cancel Order" CTA.
-7.  **Order Ready Push Notification:** Push Message "Your order is ready...", Tap-to-open deep link.
-8.  **Order History:** Order Cards (thumbnails, total price, pickup park/location, date/time), "Reorder" CTA, Filter.
-**Module 10: Profile & History (8 screens)**
-1.  **Profile Home:** "Your Profile" header, Avatar + Name, Quick Stats, Quick Links Grid (My Sessions, My Replays, Purchase History, Loyalty Wallet), "Edit Profile" CTA.
-2.  **Edit Profile:** Avatar Edit, Fields (Full Name, Email, Phone Number), "Save Changes" CTA, Validation.
-3.  **Booking History:** Tabs (Upcoming / Past), Session Cards, "Rebook" CTA, Empty State.
-4.  **Surf History Timeline:** Vertical Scroll Layout, Each Entry (Date, Session type, Replay indicator, Points earned), Milestone Flags.
-5.  **Replay Access (Mini View):** Session Summary Card (thumbnail, wave count, time), "Watch Replay" / "Share Replay" CTAs.
-6.  **Purchase History:** List View, Each Entry (Item name(s), Total spent, Purchase method, Park), "View Receipt" CTA.
-7.  **Loyalty Point History:** Grouped by date, Icons for action type, +/- balance, Filter.
-8.  **Session Share Settings:** Toggle Switches (Make replays shareable, Show surf stats to crew, Include me in leaderboards), "Save Preferences" CTA, Legal Link.
-**Module 11: Wallet & Payments (10 screens)**
-1.  **Wallet Overview:** "Your Wallet" header, Balance Cards (Credits, Points), Payment Methods Preview, "Add Payment Method" / "Redeem Points" CTAs.
-2.  **Add Payment Method:** Form Fields (Card Number, Expiry, CVV, Zip), "Save Card" CTA, Apple Pay Option.
-3.  **Manage Payment Methods:** List View (saved cards, edit/remove, default toggle), Add new card button.
-4.  **Redeem Credits:** Toggle in Booking/Checkout, Label "Apply available credits," Behavior (deducts), Fallback Message.
-5.  **Points Redemption UX:** Toggle/Slider input for points, real-time total update, Limit Warning, "Apply" CTA.
-6.  **Checkout Summary with Wallet Options:** Sections (Item list, Subtotal, Credits/Points applied, Total due, Payment method dropdown), "Place Order" CTA.
-7.  **Payment Success Screen:** "Payment Successful" header, Order summary card, Line Items (paid with), "Return to Home" / "Track Order" CTAs.
-8.  **Payment Failure State:** Banner "Payment failed," Reason Message, "Try Again" / "Use Different Payment Method" CTAs.
-9.  **POS Sync Feedback:** Status Label "Syncing...", Success Check, Failure State.
-10. **Refund Status Page:** Order Card Summary, Refund Info (amount, method, date), Status Banner, Support CTA.
-**Module 12: Notifications (6 Screens)**
-1.  **Notification Center:** "Notifications" header, Grouped by Type (Booking, Replay, Drops, Crew), Notification Cards, "Mark All as Read" CTA, Empty State.
-2.  **Push Preferences:** Toggle List (Surf, Replay, Retail, Loyalty, Crew), Master Toggle "Enable All Notifications," "Save Changes" CTA.
-3.  **Localized Content Notifications:** Description "Receive content for your current park...", Toggle "Enable local updates," Disclosure.
-4.  **Segment-Based Push UX:** Example Message "You haven’t booked in 10 days...", Tap-to-book CTA, Branded tone.
-5.  **Drop Alert Notification:** Message "New drop: Haevn x Futures now available," "Shop Now" CTA, Image Preview.
-6.  **Replay Notification:** Message "Your FlowState video from today’s session is live," "Watch Replay" CTA.
-**Module 13: Offline States (4 Screens)**
-1.  **Offline QR Code:** Static QR Display, Session Details, Banner "This QR is valid offline," "Add to Apple Wallet" CTA, Timestamp of last sync.
-2.  **Cached Replay Playback:** Banner "Offline Mode," Limitations Message, Playback Controls, Visual cue (greyed-out stats).
-3.  **Cached Booking History:** Session Cards (local data only), CTAs Disabled, Visual cue "Offline – Last synced X hrs ago."
-4.  **Offline Push & Local Alerts:** Banner Alert "Your session is in 30 minutes (cached)," Notification shown in airplane mode, Settings Message.
+#### Module 9: F\&B Ordering (8 screens)
+
+1. **F\&B Menu by Park:** "Order Food & Drinks" header, Park Selector, Category Tabs, Menu Item Cards (image, name, price, "+", "View Cart" CTA).
+2. **Menu Item Detail:** Full Image View, Item Name, Description, Nutrition, Price, Quantity Selector, "Add to Cart" CTA, Close icon.
+3. **Cart Summary:** "Your Cart" header, Items List (edit/delete), Subtotal, Note Field, "Checkout" / "Continue Shopping" CTAs.
+4. **F\&B Checkout:** Pickup Location Selector, Pickup Time Selector, Payment Method options, "Place Order" CTA, Error Handling.
+5. **Order Confirmation:** "Order Confirmed" header, Order Summary Card, "Track Order" CTA, Subtext.
+6. **Order Status Tracking:** Progress Bar (Received, In Preparation, Ready), Estimated Time Remaining, Visual, "Cancel Order" CTA.
+7. **Order Ready Push Notification:** Push Message "Your order is ready...", Tap-to-open deep link.
+8. **Order History:** Order Cards (thumbnails, total price, pickup park/location, date/time), "Reorder" CTA, Filter.
+#### Module 10: Profile & History (8 screens)
+
+1. **Profile Home:** "Your Profile" header, Avatar + Name, Quick Stats, Quick Links Grid (My Sessions, My Replays, Purchase History, Loyalty Wallet), "Edit Profile" CTA.
+2. **Edit Profile:** Avatar Edit, Fields (Full Name, Email, Phone Number), "Save Changes" CTA, Validation.
+3. **Booking History:** Tabs (Upcoming / Past), Session Cards, "Rebook" CTA, Empty State.
+4. **Surf History Timeline:** Vertical Scroll Layout, Each Entry (Date, Session type, Replay indicator, Points earned), Milestone Flags.
+5. **Replay Access (Mini View):** Session Summary Card (thumbnail, wave count, time), "Watch Replay" / "Share Replay" CTAs.
+6. **Purchase History:** List View, Each Entry (Item name(s), Total spent, Purchase method, Park), "View Receipt" CTA.
+7. **Loyalty Point History:** Grouped by date, Icons for action type, +/- balance, Filter.
+8. **Session Share Settings:** Toggle Switches (Make replays shareable, Show surf stats to crew, Include me in leaderboards), "Save Preferences" CTA, Legal Link.
+#### Module 11: Wallet & Payments (10 screens)
+
+1. **Wallet Overview:** "Your Wallet" header, Balance Cards (Credits, Points), Payment Methods Preview, "Add Payment Method" / "Redeem Points" CTAs.
+2. **Add Payment Method:** Form Fields (Card Number, Expiry, CVV, Zip), "Save Card" CTA, Apple Pay Option.
+3. **Manage Payment Methods:** List View (saved cards, edit/remove, default toggle), Add new card button.
+4. **Redeem Credits:** Toggle in Booking/Checkout, Label "Apply available credits," Behavior (deducts), Fallback Message.
+5. **Points Redemption UX:** Toggle/Slider input for points, real-time total update, Limit Warning, "Apply" CTA.
+6. **Checkout Summary with Wallet Options:** Sections (Item list, Subtotal, Credits/Points applied, Total due, Payment method dropdown), "Place Order" CTA.
+7. **Payment Success Screen:** "Payment Successful" header, Order summary card, Line Items (paid with), "Return to Home" / "Track Order" CTAs.
+8. **Payment Failure State:** Banner "Payment failed," Reason Message, "Try Again" / "Use Different Payment Method" CTAs.
+9. **POS Sync Feedback:** Status Label "Syncing...", Success Check, Failure State.
+10. **Refund Status Page:**
+ Order Card Summary, Refund Info (amount, method, date), Status Banner, Support CTA.
+#### Module 12: Notifications (6 Screens)
+
+1. **Notification Center:** "Notifications" header, Grouped by Type (Booking, Replay, Drops, Crew), Notification Cards, "Mark All as Read" CTA, Empty State.
+2. **Push Preferences:** Toggle List (Surf, Replay, Retail, Loyalty, Crew), Master Toggle "Enable All Notifications," "Save Changes" CTA.
+3. **Localized Content Notifications:** Description "Receive content for your current park...", Toggle "Enable local updates," Disclosure.
+4. **Segment-Based Push UX:** Example Message "You haven’t booked in 10 days...", Tap-to-book CTA, Branded tone.
+5. **Drop Alert Notification:** Message "New drop: Haevn x Futures now available," "Shop Now" CTA, Image Preview.
+6. **Replay Notification:** Message "Your FlowState video from today’s session is live," "Watch Replay" CTA.
+#### Module 13: Offline States (4 Screens)
+
+1. **Offline QR Code:** Static QR Display, Session Details, Banner "This QR is valid offline," "Add to Apple Wallet" CTA, Timestamp of last sync.
+2. **Cached Replay Playback:** Banner "Offline Mode," Limitations Message, Playback Controls, Visual cue (greyed-out stats).
+3. **Cached Booking History:** Session Cards (local data only), CTAs Disabled, Visual cue "Offline – Last synced X hrs ago."
+4. **Offline Push & Local Alerts:**
+ Banner Alert "Your session is in 30 minutes (cached)," Notification shown in airplane mode, Settings Message.
 ---
+
 ### Part 5: Notion Import-Ready Product Specification
+
 This section provides the comprehensive Haevn App Master Product Spec formatted for direct import into Notion, including databases, linked elements, and detailed sections for design, API, data models, integrations, and more.
-```
-# 🏄 Haevn App – Master Product Spec
+
+```json
+🏄 Haevn App – Master Product Spec
 Welcome to the centralized hub for all Haevn product documentation, design, engineering, and launch planning.
 ## 📁 Quick Links
 * [Figma: Haevn UI Design File](YOUR_FIGMA_LINK_HERE)
@@ -494,34 +535,35 @@ This is a complete feature database. You can paste this into a Notion database a
 | Admin & Integration Infrastructure| Notification routing layer (OneSignal/Firebase) | Manages routing of notifications.                                            | Backlog         |             | N                | Y                | Backend.                                                                |
 | Admin & Integration Infrastructure| Feature flag system per module               | Implements feature flags for granular control.                               | Backlog         |             | N                | Y                | Backend/Config.                                                         |
 | Admin & Integration Infrastructure| Remote config toggles for beta features      | Allows remote toggling of beta features.                                     | Backlog         |             | N                | Y                | Backend/Config.                                                         |
-```
+
+```json
 ## 🎨 Design System
-* Figma component library
-* Typography & colors
-* Brand assets
-* UI motion references
-* Lottie animations
+- Figma component library
+- Typography & colors
+- Brand assets
+- UI motion references
+- Lottie animations
 ## 🔌 API Spec
-* Auth (Apple, Google, Email)
-  * Booking system (Surf, Wellness, Events)
-  * Replay (FlowState API integration)
-  * Membership & Referral
-  * Retail / Drop inventory
-  * Wallet / Stripe integration
-  * POS Sync
-  * Notification (OneSignal/Firebase)
-  * CRM (HubSpot/Salesforce)
-  * Example requests & responses
+- Auth (Apple, Google, Email)
+- Booking system (Surf, Wellness, Events)
+- Replay (FlowState API integration)
+- Membership & Referral
+- Retail / Drop inventory
+- Wallet / Stripe integration
+- POS Sync
+- Notification (OneSignal/Firebase)
+- CRM (HubSpot/Salesforce)
+- Example requests & responses
 ## 🧩 Data Models
 JSON schemas and structure for:
-  * Users
-  * Bookings
-  * Sessions
-  * Replay metadata
-  * Crews
-  * Orders (F\&B, Drops)
-  * Payments
-  * Points/Perks
+- Users
+- Bookings
+- Sessions
+- Replay metadata
+- Crews
+- Orders (F\&B, Drops)
+- Payments
+- Points/Perks
 ## 🔗 Integrations
 | Integration | Service              | Link                               | Notes                                  |
 | :------ | :------------- | :--------------------- | :----------------------- |
@@ -534,16 +576,16 @@ JSON schemas and structure for:
 | Analytics   | Mixpanel             | Setup                              | Funnels, events                        |
 | CRM         | HubSpot / Salesforce | Docs                               | Referral sync                          |
 ## 📡 Offline Strategy
-  * Cached QR codes
-  * Local session & video cache
-  * Offline push scheduling
-  * Booking fallback UX
-  * Airplane mode friendly
+- Cached QR codes
+- Local session & video cache
+- Offline push scheduling
+- Booking fallback UX
+- Airplane mode friendly
 ## 📬 Push Notification Plan
-  * **Triggers:** Bookings, replays, drops, referral success
-  * **Segmenting:** Park-based, behavior-based, crew-based
-  * **Tools:** OneSignal, Firebase
-  * **Templates:** Title + body + deep link + icon
+- **Triggers:** Bookings, replays, drops, referral success
+- **Segmenting:** Park-based, behavior-based, crew-based
+- **Tools:** OneSignal, Firebase
+- **Templates:** Title + body + deep link + icon
 ## 🚦 Release Plan
 | Phase      | Weeks | Description                                      |
 | :------- | :---- | :----------------------------- |
@@ -556,22 +598,22 @@ JSON schemas and structure for:
 | QA & Beta  | 22–24 | Final polish, testing, TestFlight                |
 ## 🧪 QA Checklist
 Per-module test plans:
-* Booking flow edge cases
-* Push reliability (foreground vs background)
-* Offline scenarios
-* Payment errors
-* Replay sync & performance
-* Loyalty accrual, redemption accuracy
+- Booking flow edge cases
+- Push reliability (foreground vs background)
+- Offline scenarios
+- Payment errors
+- Replay sync & performance
+- Loyalty accrual, redemption accuracy
 ## 📊 Analytics & Event Plan
-* Mixpanel setup
-* Key funnels: Book \> Replay \> Rebook
-* Referral performance tracking
-* Loyalty program analytics
-* A/B test toggle tracking
+- Mixpanel setup
+- Key funnels: Book \> Replay \> Rebook
+- Referral performance tracking
+- Loyalty program analytics
+- A/B test toggle tracking
 ## 🧰 Feature Flag System
-* Remote config per region/park
-* Beta toggle support
-* Emergency kill switches
+- Remote config per region/park
+- Beta toggle support
+- Emergency kill switches
 ---
 # Haevn App Development Plan
 ## Background and Motivation
@@ -968,6 +1010,25 @@ This phase ensures the app meets quality standards, gathers user feedback throug
 - Comprehensive QA results
 - Beta testing feedback analysis
 - App Store submission readiness
+
+## Design Partners
+
+
+### Bttr Design Team
+
+Bttr is the dedicated design team responsible for all design aspects of the Haevn app project. Their comprehensive role encompasses:
+- Creating and maintaining the cohesive visual identity and design system for Haevn
+- Developing user experience flows and interaction patterns across all app features
+- Producing high-fidelity UI designs, prototypes, and animation specifications
+- Conducting user research and usability testing to validate design decisions
+- Collaborating with development teams to ensure design implementation accuracy
+- Establishing accessibility standards and ensuring compliance throughout the app
+- Iterating designs based on user feedback and analytics insights
+- Managing design versioning and documentation for all app components
+- Creating marketing design assets that align with the core app experience
+- Providing design QA during development phases
+Bttr's expertise in surf culture and lifestyle applications makes them an ideal partner for translating Haevn's brand values into a compelling digital experience that resonates with the target audience.
+
 ## Lessons
-No lessons recorded yet
--
+
+- No lessons recorded yet

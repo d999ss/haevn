@@ -1,4 +1,48 @@
-Part 1: Absolute Master List of Haevn App Features
+# Haevn App Project Documentation
+
+## Table of Contents
+
+### Part 1: Feature List
+- [Absolute Master List of Haevn App Features](#part-1-absolute-master-list-of-haevn-app-features)
+- [Booking Features](#1-booking-features)
+- [Membership & Referral](#2-membership--referral)
+- [FlowState Replay](#3-flowstate-replay)
+- [Crews & Community](#4-crews--community)
+- [Retail & Drops](#5-retail--drops)
+- [F&B Ordering](#6-fb-ordering)
+- [Push Notifications](#7-push-notifications)
+- [Account & Profile](#8-account--profile)
+- [Payments & Wallet](#9-payments--wallet)
+- [Offline UX](#10-offline-ux)
+- [Analytics](#11-analytics)
+- [Admin & Staff](#12-admin--staff)
+
+### Part 2: Technical Order of Operations
+- [Technical Order of Operations](#part-2-technical-order-of-operations)
+- [Design System](#-design-system)
+- [API Spec](#-api-spec)
+- [Integration Plan](#-integration-plan)
+- [Offline Strategy](#-offline-strategy)
+- [Push Notification Plan](#-push-notification-plan)
+- [Release Plan](#-release-plan)
+- [QA Checklist](#-qa-checklist)
+- [Analytics & Event Plan](#-analytics--event-plan)
+- [Feature Flag System](#-feature-flag-system)
+
+### Part 3: Development Plan
+- [Background and Motivation](#background-and-motivation)
+- [Key Challenges and Analysis](#key-challenges-and-analysis)
+- [High-level Task Breakdown](#high-level-task-breakdown)
+- [Project Status Board](#project-status-board)
+- [Phase Documentation](#phase-documentation)
+- [Risk Assessment & Mitigation](#risk-assessment--mitigation)
+- [Dependency Mapping](#dependency-mapping)
+- [Resource Allocation](#resource-allocation)
+- [Milestone Reviews](#milestone-reviews)
+
+---
+
+## Part 1: Absolute Master List of Haevn App Features
 
 This is a granular, un-grouped breakdown of every feature across all modules of the Haevn app.
 
@@ -539,15 +583,15 @@ This is a complete feature database. You can paste this into a Notion database a
 
 ## 🎨 Design System
 
-  * Figma component library
-  * Typography & colors
-  * Brand assets
-  * UI motion references
-  * Lottie animations
+* Figma component library
+* Typography & colors
+* Brand assets
+* UI motion references
+* Lottie animations
 
 ## 🔌 API Spec
 
-  * Auth (Apple, Google, Email)
+* Auth (Apple, Google, Email)
   * Booking system (Surf, Wellness, Events)
   * Replay (FlowState API integration)
   * Membership & Referral
@@ -615,28 +659,28 @@ JSON schemas and structure for:
 
 Per-module test plans:
 
-  * Booking flow edge cases
-  * Push reliability (foreground vs background)
-  * Offline scenarios
-  * Payment errors
-  * Replay sync & performance
-  * Loyalty accrual, redemption accuracy
+* Booking flow edge cases
+* Push reliability (foreground vs background)
+* Offline scenarios
+* Payment errors
+* Replay sync & performance
+* Loyalty accrual, redemption accuracy
 
 ## 📊 Analytics & Event Plan
 
-  * Mixpanel setup
-  * Key funnels: Book \> Replay \> Rebook
-  * Referral performance tracking
-  * Loyalty program analytics
-  * A/B test toggle tracking
+* Mixpanel setup
+* Key funnels: Book \> Replay \> Rebook
+* Referral performance tracking
+* Loyalty program analytics
+* A/B test toggle tracking
 
 ## 🧰 Feature Flag System
 
-  * Remote config per region/park
-  * Beta toggle support
-  * Emergency kill switches
+* Remote config per region/park
+* Beta toggle support
+* Emergency kill switches
 
-------
+-----
 
 # Haevn App Development Plan
 
@@ -1016,7 +1060,7 @@ This phase ensures the app works reliably in offline scenarios and edge cases. I
 - Critical app features work without an internet connection
 - Users can access their QR passes, view cached content, and receive notifications about sync status
 
-### Phase 5: Admin & Analytics (Weeks 18-22)
+### Phase 5 Documentation: Admin & Analytics (Weeks 18-22)
 
 **Overview:**  
 This phase implements administrative features, analytics tracking, and feature flag system. It focuses on tools for content management, staff operations, and data analysis.
@@ -1033,7 +1077,7 @@ This phase implements administrative features, analytics tracking, and feature f
 - User behavior is tracked accurately, data is available for analysis
 - Features can be toggled remotely, beta features can be enabled for specific users
 
-### Final Phase: QA, Beta, Optimization (Weeks 22-24)
+### Final Phase Documentation: QA, Beta, Optimization (Weeks 22-24)
 
 **Overview:**  
 This phase ensures the app meets quality standards, gathers user feedback through beta testing, and optimizes performance before App Store submission.

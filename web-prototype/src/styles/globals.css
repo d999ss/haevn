@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 44, 62, 80;
+  --background-rgb: 242, 233, 216;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+@layer base {
+  h1 {
+    @apply text-4xl font-bold mb-6;
+  }
+  h2 {
+    @apply text-3xl font-semibold mb-5;
+  }
+  h3 {
+    @apply text-2xl font-semibold mb-4;
+  }
+  h4 {
+    @apply text-xl font-medium mb-3;
+  }
+  h5 {
+    @apply text-lg font-medium mb-2;
+  }
+  h6 {
+    @apply text-base font-medium mb-2;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-ocean-blue text-white px-4 py-2 rounded-md hover:bg-opacity-90 transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border border-ocean-blue text-ocean-blue px-4 py-2 rounded-md hover:bg-ocean-blue hover:bg-opacity-10 transition-colors;
+  }
+  
+  .btn-accent {
+    @apply bg-sunset-orange text-white px-4 py-2 rounded-md hover:bg-opacity-90 transition-colors;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6;
+  }
+  
+  .input {
+    @apply border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-ocean-blue focus:border-transparent;
+  }
+}
